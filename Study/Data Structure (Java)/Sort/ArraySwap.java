@@ -6,7 +6,7 @@ public class ArraySwap {
 		
 		int[] arr = {1,2,3,4,5};
 		
-		Swap(arr,1,5);
+		Swap(arr,1,4);
 		
 	}
 	public static void Swap(int[] arr, int srcPos, int destPos) {
