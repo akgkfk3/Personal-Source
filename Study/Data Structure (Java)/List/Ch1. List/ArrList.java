@@ -5,6 +5,8 @@ import java.util.NoSuchElementException;
 public class ArrList<E> {
 	
 	/*
+	 * 배열 (Array)
+	 * 
 	 * "자바와 함께하는 자료구조의 이해" 교재의 소스입니다.
 	 * 학습을 위해서 제네릭 배열을 사용한 것으로 보이며, 보통 제네릭은 컴파일 시점에서 타입 체크를 하고, 배열은 런타임 시점에서 요소 타입을 체크해서 예외 발생을 하기에
 	 * 서로 요소 타입을 체크하는 시점이 다르기 때문에 타입 안정성의 문제로 배열과 제네릭은 보통 같이 쓰이지 않습니다. (배열은 공변, 제네릭은 불변)
@@ -20,7 +22,7 @@ public class ArrList<E> {
 	 * list.add("gogogo");
 	 */
 	
-	// 리스트의 항목들을 저장할 배열
+	// 리스트의 항목들을 저장할 배열 -> 제네릭 배열은 컴파일 시점에 무슨 타입인지 알아야 하므로 선언만 가능하고 생성하려면 Object배열로 생성후 캐스팅 해야한다.
 	private E a[];
 	
 	// 리스트의 항목 수
@@ -77,15 +79,15 @@ public class ArrList<E> {
 		return Item;
 	}
 	
-	public boolean isEmpty() {	return size == 0;	}
+	public boolean isEmpty() {return size == 0;}
 	
-	public int count() {	return a.length;	}
+	public int count() {return a.length;}
 	
 	public static void main(String[] args) {
 		ArrList<String> ss = new ArrList<>();
 		ss.insertLast("gg");
-		System.out.println(ss.count());
-		System.out.println(ss.a.length); 
+		System.out.println(ss.count()); 
+//		System.out.println(ss.a[0]); 왜 안되는지 모르겠다.
 	}
 }
 
