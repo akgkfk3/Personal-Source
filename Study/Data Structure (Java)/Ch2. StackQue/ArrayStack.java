@@ -1,4 +1,4 @@
-package StackQueDeque;
+package StackQue;
 
 import java.util.EmptyStackException;
 
