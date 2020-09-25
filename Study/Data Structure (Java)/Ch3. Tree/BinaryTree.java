@@ -99,7 +99,7 @@ public class BinaryTree<Key extends Comparable<Key>> {
 	
 	public static void main(String[] args) {
 		System.out.println("테스트 공간");
-		// 이진트리에 데이터 삽입 삭제 갱신하는 연산들은 이진탐색트리에서 소개할 것이다.
+		// 이진트리에 데이터 삽입 삭제 갱신하는 연산들은 이진탐색트리에서 소개할 것이다
 	}
 
 }
