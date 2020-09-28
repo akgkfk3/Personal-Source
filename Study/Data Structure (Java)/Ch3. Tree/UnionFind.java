@@ -2,6 +2,10 @@ package Tree;
 
 public class UnionFind {
 	
+	/*
+	 * 상호배타적 집합을 위한 트리 연산 (Disjoint Set)
+	 */
+
 	protected GNode[] a;
 	
 	public UnionFind(GNode[] iarray) {

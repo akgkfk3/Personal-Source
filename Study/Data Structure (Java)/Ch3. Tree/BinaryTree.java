@@ -5,6 +5,10 @@ import java.util.Queue;
 
 public class BinaryTree<Key extends Comparable<Key>> {
 	
+	/*
+	 * 이진트리 (Binary Tree)
+	 */
+
 	private Node<Key> root;
 	
 	public BinaryTree() {

@@ -1,6 +1,10 @@
 
 public class BinarySearch {
 
+	/*
+	 * 이진탐색 (배열)
+	 */
+
 	public static void main(String[] args) {
 
 		int[] test = { 1, 4, 6, 8, 10, 15, 17, 19 };
