@@ -1,5 +1,3 @@
-package SearchTree;
-
 public class RedBlackTree<Key extends Comparable<Key>, Value> {
 	
 	/*

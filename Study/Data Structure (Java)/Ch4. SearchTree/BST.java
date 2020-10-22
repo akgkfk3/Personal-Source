@@ -1,5 +1,3 @@
-package SearchTree;
-
 public class BST<Key extends Comparable<Key>, Value> {
 	
 	/*
