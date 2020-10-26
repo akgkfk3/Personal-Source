@@ -148,7 +148,7 @@ public class RedBlackTree<Key extends Comparable<Key>, Value> {
 		return fixUp(n);
 	}
 	
-	// 임의의 k값을 가진 노드를 삭제하는 delete()연산은 미구현
+	// 임의의 k값을 가진 노드를 삭제하는 delete()연산은 추후에 시간이 날 때, 구현하도록 한다
 	
 	public static void main(String[] args) {
 		System.out.println("테스트 공간");

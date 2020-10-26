@@ -137,6 +137,8 @@ public class BST<Key extends Comparable<Key>, Value> {
 		}
 		return n;
 	}
+
+	// 최대값 삭제 연산 (deleteMax)는 추후에 시간이 날 때, 구현하도록 한다
 	
 	public static void main(String[] args) {
 		System.out.println("테스트 공간");
