@@ -1,3 +1,8 @@
+/**
+ * @author sHu
+ * @category Binary Search Tree
+ */
+
 public class BST<Key extends Comparable<Key>, Value> {
 	
 	/*

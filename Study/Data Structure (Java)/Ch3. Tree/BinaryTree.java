@@ -1,7 +1,10 @@
-package Tree;
-
 import java.util.LinkedList;
 import java.util.Queue;
+
+/**
+ * @author sHu
+ * @category Tree
+ */
 
 public class BinaryTree<Key extends Comparable<Key>> {
 	

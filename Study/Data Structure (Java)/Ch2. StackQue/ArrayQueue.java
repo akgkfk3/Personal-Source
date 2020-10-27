@@ -1,6 +1,9 @@
-package StackQue;
-
 import java.util.NoSuchElementException;
+
+/**
+ * @author sHu
+ * @category StackQue
+ */
 
 public class ArrayQueue<E> {
 	

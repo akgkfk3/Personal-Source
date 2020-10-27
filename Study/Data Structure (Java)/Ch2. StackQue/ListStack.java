@@ -1,6 +1,9 @@
-package StackQue;
-
 import java.util.EmptyStackException;
+
+/**
+ * @author sHu
+ * @category StackQue
+ */
 
 public class ListStack<E> {
 	

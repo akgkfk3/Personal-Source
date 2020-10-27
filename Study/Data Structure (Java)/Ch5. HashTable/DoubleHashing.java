@@ -1,3 +1,8 @@
+/**
+ * @author sHu
+ * @category HashTable
+ */
+
 public class DoubleHashing<K,V> {
 
 	/*

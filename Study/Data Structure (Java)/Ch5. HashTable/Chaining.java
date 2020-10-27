@@ -1,3 +1,8 @@
+/**
+ * @author sHu
+ * @category HashTable
+ */
+
 public class Chaining<K,V> {
 	
 	/*

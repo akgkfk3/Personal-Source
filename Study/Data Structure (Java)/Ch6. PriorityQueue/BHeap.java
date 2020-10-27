@@ -1,3 +1,8 @@
+/**
+ * @author sHu
+ * @category Heap
+ */
+
 public class BHeap<Key extends Comparable<Key>, Value> {
 	
 	/*

@@ -1,6 +1,9 @@
-package List;
-
 import java.util.NoSuchElementException;
+
+/**
+ * @author sHu
+ * @category List
+ */
 
 public class CList<E> {
 	

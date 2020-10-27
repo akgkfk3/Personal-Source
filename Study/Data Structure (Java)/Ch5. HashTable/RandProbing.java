@@ -1,5 +1,10 @@
 import java.util.Random;
 
+/**
+ * @author sHu
+ * @category HashTable
+ */
+
 public class RandProbing<K,V> {
 	
 	/*

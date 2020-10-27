@@ -1,3 +1,8 @@
+/**
+ * @author sHu
+ * @category Binary Search Tree
+ */
+
 public class RedBlackTree<Key extends Comparable<Key>, Value> {
 	
 	/*

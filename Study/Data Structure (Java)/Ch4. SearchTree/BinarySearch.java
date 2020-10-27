@@ -1,3 +1,7 @@
+/**
+ * @author sHu
+ * @category Binary Search
+ */
 
 public class BinarySearch {
 

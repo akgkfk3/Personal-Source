@@ -1,4 +1,6 @@
-package Tree;
+/**
+ * @author sHu
+ */
 
 public class UnionFind {
 	
