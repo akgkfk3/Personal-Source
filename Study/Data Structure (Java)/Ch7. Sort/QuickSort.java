@@ -1,125 +1,43 @@
-package Array;
-
-import java.util.ArrayList;
-
-import java.util.Date;
-
-import java.util.List;
-
-import java.util.Scanner;
-
-public class QuickSort {
-
-	private static Scanner scan;
-
-	public static void main(String[] args) {
-
-		QuickSort Quick = new QuickSort();
-
-		List<Integer> list = new ArrayList<>();
-
-		scan = new Scanner(System.in);
-
-		System.out.println("Insert Array Size");
-
-		int size = scan.nextInt();
-
-		System.out.println("Ramdom Array is Creating");
-
-		Quick.setIntNotDuplication(list, size);
-
-		System.out.println("Ramdom Array is Created");
-
-		Date date = new Date();
-
-		System.out.println("Start Quick Sort");
-
-		Quick.quickSort(list, 0, list.size() - 1);
-
-		System.out.println("End Quick Sorted List : " + list);
-
-		System.out.println("End Quick Sort size : " + size);
-
-		Date date2 = new Date();
-
-		System.out.println("End Quick Sorted time : " + (date2.getTime() - date.getTime()));
-
+public class Quick extends BasicCommand{
+	
+	@SuppressWarnings("rawtypes")
+	public static void sort(Comparable[] a) {
+		quick(a, 0, a.length -1);
 	}
-
-	private void quickSort(List<Integer> list, int lowest, int highest) {
-
-		if (list == null || list.size() < 1) {
-
-			return;
-
-		} else if (lowest >= highest) {
-
-			return;
-
-		}
-
-		int middle = lowest + ((highest - lowest) / 2);
-
-		int pivot = list.get(middle);
-
-		int i = lowest;
-
-		int j = highest;
-
-		while (i <= j) {
-
-			while (list.get(i) < pivot) {
-				i++;
-			}
-
-			while (list.get(j) > pivot) {
-				j--;
-			}
-
-			if (i <= j) {
-
-				int temp = list.get(i);
-
-				list.set(i, list.get(j));
-
-				list.set(j, temp);
-
-				i++;
-
-				j--;
-
-			}
-
-		}
-
-		if (lowest < j)
-
-			quickSort(list, lowest, j);
-
-		if (highest > i)
-
-			quickSort(list, i, highest);
-
-	}
-
-	private void setIntNotDuplication(List<Integer> list, int size) {
-
-		for (int i = 0; i < size; i++) {
-
-			list.add(setRnadomSize(size));
-			for (int j = 0; j < list.size() - 1; j++) {
-				if (list.get(j) == list.get(i)) {
-					list.set(i, setRnadomSize(size));
-					j = 0;
+	
+	@SuppressWarnings("rawtypes")
+	public static void quick(Comparable[] a, int first, int last) {
+		
+		if(first < last) {
+			
+			int pibot = first, end = last, tmp;
+			
+			while(pibot != end) {
+				if(pibot < end) {
+					if(greater(a[pibot], a[end])) {
+						swap(a,pibot++,end);
+						tmp = pibot; pibot = end; end = tmp;
+					} else {
+						end--;
+					}
+				} else {
+					if(greater(a[pibot], a[end])) {
+						end++;
+					} else {
+						swap(a,pibot--,end);
+						tmp = pibot; pibot = end; end = tmp;
+					}
 				}
 			}
+			quick(a,first,pibot-1);
+			quick(a,pibot+1, last);
 		}
-		System.out.println("param : Random List : " + list);
 	}
-
-	private int setRnadomSize(int size) {
-		return (int) ((Math.random() * (size * 100)) + 1);
-
+	
+	public static void main(String[] args) {
+		Integer[] ss = {295,212,157,2,5,1,962,465,4,8,7,222,6,5024,12,15,3,500,400,1024};
+		printList(ss);
+		sort(ss);
+		printList(ss);
 	}
-
 }

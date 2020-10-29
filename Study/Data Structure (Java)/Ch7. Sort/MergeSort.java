@@ -1,55 +1,48 @@
-package Array;
+package Sort;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-public class MergeSort
-{
-    private static List<Integer> targetList = new ArrayList<>(Arrays.asList(100, 40, 60, 75, 77, 34, 51, 24, 24, 37, 88));
-
-    public static void main( String[] args )
-    {
-    	MergeSort Merge = new MergeSort();
-        List<Integer> result = Merge.sort(targetList);
-        MergeSort.print(result);
-        System.out.println(result.size() == targetList.size());
-    }
-
-    public static void print(List<Integer> result) {
-        result.stream().forEach(item -> System.out.print(String.format("%d ", item)));
-        System.out.println();
-    }
-
-    public List<Integer> sort(List<Integer> targetList) {
-     
-        if (targetList.size() > 1) {        
-            return merge(
-                sort(targetList.subList(0, targetList.size() / 2)),
-                sort(targetList.subList(targetList.size() / 2, targetList.size()))
-            	);
-        } else {
-            return targetList;
-        }
-    }
-
-    public List<Integer> merge (List<Integer> left, List<Integer> right) {
-        
-        List<Integer> result = new ArrayList<>();
-        int rightIdx = 0;
-
-        for (Integer l : left) {
-
-            while (right.size() > rightIdx && l > right.get(rightIdx)) {
-               
-                result.add(right.get(rightIdx));
-                rightIdx++;
-            }
-            result.add(l);
-        }
-        for (int i = rightIdx; i < right.size(); i ++) {
-            result.add(right.get(i));
-        }
-        return result;
-    }
+public class Merge extends BasicCommand{
+	
+	@SuppressWarnings("rawtypes")
+	private static Comparable[] tmp;
+	
+	@SuppressWarnings("rawtypes")
+	public static void sort(Comparable[] a) {
+		tmp = new Comparable[a.length];
+		divide_conquer_merge(a, 0, a.length-1);
+		tmp = null;
+	}
+	
+	@SuppressWarnings("rawtypes")
+	private static void divide_conquer_merge(Comparable[] a, int first, int last) {
+		
+		int mid = (first + last)/2;
+		
+		if(first < last) {
+			divide_conquer_merge(a, first, mid);
+			divide_conquer_merge(a, mid+1, last);
+			
+			int p = first;
+			int q = mid+1;
+			int idx = p;
+			
+			while (p <= mid || q <= last) { 
+				if (q > last || (p <= mid && greater(a[q], a[p]))) {
+					tmp[idx++] = a[p++]; 
+				} else { 
+					tmp[idx++] = a[q++]; 
+				} 
+			}
+			
+			for(int i=first; i<=last; i++) {
+				a[i] = tmp[i];
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		Integer[] ss = {2,7,3,9,1,5,133,152,15,24,4,8};
+		printList(ss);
+		sort(ss);
+		printList(ss);
+	}
 }
