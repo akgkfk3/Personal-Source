@@ -63,3 +63,4 @@ ifconfig.me / www.whatismyip.com [ISP - Internet Service Provider]
 
 * Putty 
 - Putty를 이용해 교육생 컴퓨터에서 강사님 리눅스로 원격 접속을 한다.
+- 월요일날 클라우드에 설치해서 자기 컴퓨터에서 클라우드로 접속할 것이다.
